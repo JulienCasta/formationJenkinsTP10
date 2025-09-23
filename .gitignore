@@ -1,0 +1,5 @@
+## Ignore les fichiers binaires générés lors de la compilation Java
+*.class
+
+## Ignore les dossiers liés à maven
+target/
