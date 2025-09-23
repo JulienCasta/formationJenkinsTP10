@@ -1,0 +1,11 @@
+node {
+    stage("fecthing repos") {
+        git 'https://github.com/JulienCasta/formationJenkinsTP10.git'
+    }
+    stage("compiling code") {
+       bat '''javac HelloWorld.java'''
+    }
+    stage("running code") {
+       bat '''java HelloWorld'''
+    }
+}
