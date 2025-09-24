@@ -1,11 +1,25 @@
 node {
-    stage("fecthing repos") {
-        git 'https://github.com/JulienCasta/formationJenkinsTP10.git'
+    stage("Info") {
+       echo "Info"
     }
-    stage("compiling code") {
-       bat '''javac HelloWorld.java'''
+    stage("Nettoyage") {
+       echo "Nettoyage"
+       bat ''' mvn clean '''
     }
-    stage("running code") {
-       bat '''java HelloWorld'''
+    stage("Compilation") {
+       echo "Compilation"
+       bat ''' mvn compile '''
+    }
+    stage("Test") {
+       bat ''' mvn test '''
+    }
+    stage("Quality") {
+       echo "Quality"
+    }
+    stage("Package") {
+       bat ''' mvn package '''
+    }
+    stage("Performance") {
+       echo "Performance"
     }
 }
